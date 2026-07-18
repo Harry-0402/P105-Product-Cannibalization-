@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P105 — Product Cannibalization & Demand Shift Analysis</title>
-    <meta name="description" content="Interactive dashboard analyzing product cannibalization, demand shifts, and business KPIs">
+    <meta name="description"
+        content="Interactive dashboard analyzing product cannibalization, demand shifts, and business KPIs">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Sidebar Navigation -->
@@ -20,25 +24,25 @@
         </div>
         <ul class="nav-links">
             <li><a href="#" class="nav-link active" data-page="executive" id="nav-executive">
-                <span class="nav-icon">📊</span><span class="nav-text">Executive Overview</span></a></li>
+                    <span class="nav-icon">📊</span><span class="nav-text">Executive Overview</span></a></li>
             <li><a href="#" class="nav-link" data-page="sales" id="nav-sales">
-                <span class="nav-icon">📈</span><span class="nav-text">Sales Performance</span></a></li>
+                    <span class="nav-icon">📈</span><span class="nav-text">Sales Performance</span></a></li>
             <li><a href="#" class="nav-link" data-page="products" id="nav-products">
-                <span class="nav-icon">📦</span><span class="nav-text">Product Performance</span></a></li>
+                    <span class="nav-icon">📦</span><span class="nav-text">Product Performance</span></a></li>
             <li><a href="#" class="nav-link" data-page="cannibalization" id="nav-cannibalization">
-                <span class="nav-icon">🔄</span><span class="nav-text">Cannibalization</span></a></li>
+                    <span class="nav-icon">🔄</span><span class="nav-text">Cannibalization</span></a></li>
             <li><a href="#" class="nav-link" data-page="customers" id="nav-customers">
-                <span class="nav-icon">👥</span><span class="nav-text">Customer Insights</span></a></li>
+                    <span class="nav-icon">👥</span><span class="nav-text">Customer Insights</span></a></li>
             <li><a href="#" class="nav-link" data-page="pricing" id="nav-pricing">
-                <span class="nav-icon">💰</span><span class="nav-text">Pricing Analysis</span></a></li>
+                    <span class="nav-icon">💰</span><span class="nav-text">Pricing Analysis</span></a></li>
             <li><a href="#" class="nav-link" data-page="marketing" id="nav-marketing">
-                <span class="nav-icon">📣</span><span class="nav-text">Marketing Analysis</span></a></li>
+                    <span class="nav-icon">📣</span><span class="nav-text">Marketing Analysis</span></a></li>
             <li><a href="#" class="nav-link" data-page="inventory" id="nav-inventory">
-                <span class="nav-icon">📋</span><span class="nav-text">Inventory Analysis</span></a></li>
+                    <span class="nav-icon">📋</span><span class="nav-text">Inventory Analysis</span></a></li>
             <li><a href="#" class="nav-link" data-page="regional" id="nav-regional">
-                <span class="nav-icon">🗺️</span><span class="nav-text">Regional Analysis</span></a></li>
+                    <span class="nav-icon">🗺️</span><span class="nav-text">Regional Analysis</span></a></li>
             <li><a href="#" class="nav-link" data-page="recommendations" id="nav-recommendations">
-                <span class="nav-icon">💡</span><span class="nav-text">Recommendations</span></a></li>
+                    <span class="nav-icon">💡</span><span class="nav-text">Recommendations</span></a></li>
         </ul>
 
         <!-- Slicer / Filters -->
@@ -139,11 +143,18 @@
                     <p class="page-subtitle">Key performance metrics at a glance</p>
                 </div>
                 <div class="header-actions">
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank" class="header-btn">
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank"
+                        class="header-btn">
                         <span>📄</span> Documents
                     </a>
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank" class="header-btn">
-                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span> GitHub Repo
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank"
+                        class="header-btn">
+                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                                fill="none">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></span> GitHub Repo
                     </a>
                     <a href="#" class="header-btn nav-link" data-page="creator">
                         <span>👤</span> Creator Profile
@@ -151,7 +162,9 @@
                 </div>
             </div>
             <div class="guide-note">
-                <strong>💡 How to use this page:</strong> This dashboard summarizes the total portfolio impact before and after the new product launches in June 2024. Use the top KPI cards to check overall health, and the charts below to see how overall sales are shifting across categories and regions.
+                <strong>💡 How to use this page:</strong> This dashboard summarizes the total portfolio impact before
+                and after the new product launches in June 2024. Use the top KPI cards to check overall health, and the
+                charts below to see how overall sales are shifting across categories and regions.
             </div>
 
             <div class="kpi-grid" id="kpi-grid">
@@ -185,11 +198,18 @@
                     <p class="page-subtitle">Monthly sales trends and before/after comparison</p>
                 </div>
                 <div class="header-actions">
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank" class="header-btn">
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank"
+                        class="header-btn">
                         <span>📄</span> Documents
                     </a>
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank" class="header-btn">
-                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span> GitHub Repo
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank"
+                        class="header-btn">
+                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                                fill="none">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></span> GitHub Repo
                     </a>
                     <a href="#" class="header-btn nav-link" data-page="creator">
                         <span>👤</span> Creator Profile
@@ -197,7 +217,9 @@
                 </div>
             </div>
             <div class="guide-note">
-                <strong>📈 Interpreting Sales Data:</strong> The top chart shows monthly sales momentum, with the June 2024 launch event highlighted. The "Sales by Product Group" chart is filtered to only show the impacted groups (G1 and G2) by default—you can click the legend to view other groups.
+                <strong>📈 Interpreting Sales Data:</strong> The top chart shows monthly sales momentum, with the June
+                2024 launch event highlighted. The "Sales by Product Group" chart is filtered to only show the impacted
+                groups (G1 and G2) by default—you can click the legend to view other groups.
             </div>
 
             <div class="chart-row">
@@ -234,11 +256,18 @@
                     <p class="page-subtitle">Rankings, growth analysis, and revenue contribution</p>
                 </div>
                 <div class="header-actions">
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank" class="header-btn">
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank"
+                        class="header-btn">
                         <span>📄</span> Documents
                     </a>
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank" class="header-btn">
-                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span> GitHub Repo
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank"
+                        class="header-btn">
+                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                                fill="none">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></span> GitHub Repo
                     </a>
                     <a href="#" class="header-btn nav-link" data-page="creator">
                         <span>👤</span> Creator Profile
@@ -246,7 +275,9 @@
                 </div>
             </div>
             <div class="guide-note">
-                <strong>📦 Product Level Drill-Down:</strong> This section ranks individual products by their total revenue contribution and sales growth. <strong>Tip:</strong> Use the filters in the sidebar to isolate specific products, categories, or price ranges in the data table below!
+                <strong>📦 Product Level Drill-Down:</strong> This section ranks individual products by their total
+                revenue contribution and sales growth. <strong>Tip:</strong> Use the filters in the sidebar to isolate
+                specific products, categories, or price ranges in the data table below!
             </div>
 
             <div class="chart-row">
@@ -278,11 +309,18 @@
                     <p class="page-subtitle">Demand shift, customer migration, and cannibalization metrics</p>
                 </div>
                 <div class="header-actions">
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank" class="header-btn">
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank"
+                        class="header-btn">
                         <span>📄</span> Documents
                     </a>
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank" class="header-btn">
-                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span> GitHub Repo
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank"
+                        class="header-btn">
+                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                                fill="none">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></span> GitHub Repo
                     </a>
                     <a href="#" class="header-btn nav-link" data-page="creator">
                         <span>👤</span> Creator Profile
@@ -290,7 +328,10 @@
                 </div>
             </div>
             <div class="guide-note">
-                <strong>⚠️ Identifying Cannibalization:</strong> This is the core analysis page. Pay close attention to <strong>Product P6</strong>. The timeline graph reveals a direct correlation: as the new products (P4/P5) launched, P6's sales sharply declined. The migration chart proves that 14.9% of P6's customers actively switched to the new products.
+                <strong>⚠️ Identifying Cannibalization:</strong> This is the core analysis page. Pay close attention to
+                <strong>Product P6</strong>. The timeline graph reveals a direct correlation: as the new products
+                (P4/P5) launched, P6's sales sharply declined. The migration chart proves that 14.9% of P6's customers
+                actively switched to the new products.
             </div>
 
             <div class="kpi-grid small" id="cann-kpis">
@@ -324,11 +365,18 @@
                     <p class="page-subtitle">Customer behavior, retention, and switching patterns</p>
                 </div>
                 <div class="header-actions">
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank" class="header-btn">
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank"
+                        class="header-btn">
                         <span>📄</span> Documents
                     </a>
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank" class="header-btn">
-                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span> GitHub Repo
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank"
+                        class="header-btn">
+                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                                fill="none">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></span> GitHub Repo
                     </a>
                     <a href="#" class="header-btn nav-link" data-page="creator">
                         <span>👤</span> Creator Profile
@@ -336,7 +384,10 @@
                 </div>
             </div>
             <div class="guide-note">
-                <strong>👥 Understanding the Customer Base:</strong> These charts analyze behavior beneath the sales numbers. A high overall retention rate is good, but the "Switcher" data proves that many existing customers aren't buying *more*, they are simply abandoning older products to buy the newly launched ones instead.
+                <strong>👥 Understanding the Customer Base:</strong> These charts analyze behavior beneath the sales
+                numbers. A high overall retention rate is good, but the "Switcher" data proves that many existing
+                customers aren't buying *more*, they are simply abandoning older products to buy the newly launched ones
+                instead.
             </div>
 
             <div class="kpi-grid small" id="cust-kpis"></div>
@@ -361,11 +412,18 @@
                     <p class="page-subtitle">Price distribution, price bands, and pricing impact</p>
                 </div>
                 <div class="header-actions">
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank" class="header-btn">
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank"
+                        class="header-btn">
                         <span>📄</span> Documents
                     </a>
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank" class="header-btn">
-                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span> GitHub Repo
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank"
+                        class="header-btn">
+                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                                fill="none">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></span> GitHub Repo
                     </a>
                     <a href="#" class="header-btn nav-link" data-page="creator">
                         <span>👤</span> Creator Profile
@@ -400,11 +458,18 @@
                     <p class="page-subtitle">Marketing ROI and efficiency across products</p>
                 </div>
                 <div class="header-actions">
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank" class="header-btn">
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank"
+                        class="header-btn">
                         <span>📄</span> Documents
                     </a>
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank" class="header-btn">
-                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span> GitHub Repo
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank"
+                        class="header-btn">
+                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                                fill="none">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></span> GitHub Repo
                     </a>
                     <a href="#" class="header-btn nav-link" data-page="creator">
                         <span>👤</span> Creator Profile
@@ -428,11 +493,18 @@
                     <p class="page-subtitle">Stock availability trends and out-of-stock impact</p>
                 </div>
                 <div class="header-actions">
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank" class="header-btn">
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank"
+                        class="header-btn">
                         <span>📄</span> Documents
                     </a>
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank" class="header-btn">
-                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span> GitHub Repo
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank"
+                        class="header-btn">
+                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                                fill="none">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></span> GitHub Repo
                     </a>
                     <a href="#" class="header-btn nav-link" data-page="creator">
                         <span>👤</span> Creator Profile
@@ -463,11 +535,18 @@
                     <p class="page-subtitle">Performance comparison across regions</p>
                 </div>
                 <div class="header-actions">
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank" class="header-btn">
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank"
+                        class="header-btn">
                         <span>📄</span> Documents
                     </a>
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank" class="header-btn">
-                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span> GitHub Repo
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank"
+                        class="header-btn">
+                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                                fill="none">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></span> GitHub Repo
                     </a>
                     <a href="#" class="header-btn nav-link" data-page="creator">
                         <span>👤</span> Creator Profile
@@ -497,11 +576,18 @@
                     <p class="page-subtitle">Data-driven actionable insights for decision makers</p>
                 </div>
                 <div class="header-actions">
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank" class="header-btn">
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-/tree/main" target="_blank"
+                        class="header-btn">
                         <span>📄</span> Documents
                     </a>
-                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank" class="header-btn">
-                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span> GitHub Repo
+                    <a href="https://github.com/Harry-0402/P105-Product-Cannibalization-" target="_blank"
+                        class="header-btn">
+                        <span><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                                fill="none">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></span> GitHub Repo
                     </a>
                     <a href="#" class="header-btn nav-link" data-page="creator">
                         <span>👤</span> Creator Profile
@@ -520,7 +606,8 @@
                 <div class="doc-modal-header">
                     <h2>📄 Project Documents Preview</h2>
                     <div style="display: flex; gap: 12px; align-items: center;">
-                        <a href="https://raw.githubusercontent.com/Harry-0402/P105-Product-Cannibalization-/main/BRD_Product_Cannibalization_Analysis.docx" id="docDownloadBtn" class="header-btn" download>
+                        <a href="https://raw.githubusercontent.com/Harry-0402/P105-Product-Cannibalization-/main/BRD_Product_Cannibalization_Analysis.docx"
+                            id="docDownloadBtn" class="header-btn" download>
                             <span>📥</span> Download
                         </a>
                         <button class="doc-modal-close" id="docModalClose">×</button>
@@ -528,17 +615,25 @@
                 </div>
                 <div class="doc-modal-body">
                     <div class="doc-switcher">
-                        <button class="doc-btn active" data-doc="BRD_Product_Cannibalization_Analysis.docx">Business Requirements (BRD)</button>
-                        <button class="doc-btn" data-doc="FRD_Product_Cannibalization_Analysis.docx">Functional Requirements (FRD)</button>
-                        <button class="doc-btn" data-doc="PRD_Product_Cannibalization_Analysis.docx">Product Requirements (PRD)</button>
+                        <button class="doc-btn active" data-doc="BRD_Product_Cannibalization_Analysis.docx">Business
+                            Requirements (BRD)</button>
+                        <button class="doc-btn" data-doc="FRD_Product_Cannibalization_Analysis.docx">Functional
+                            Requirements (FRD)</button>
+                        <button class="doc-btn" data-doc="PRD_Product_Cannibalization_Analysis.docx">Product
+                            Requirements (PRD)</button>
                         <button class="doc-btn" data-doc="Project_Charter.docx">Project Charter</button>
                         <button class="doc-btn" data-doc="Data_Dictionary.docx">Data Dictionary</button>
-                        <button class="doc-btn" data-doc="Test_Plan_Validation_Document.docx">Test Plan & Validation</button>
+                        <button class="doc-btn" data-doc="Test_Plan_Validation_Document.docx">Test Plan &
+                            Validation</button>
                         <button class="doc-btn" data-doc="User_Manual_Dashboard_Guide.docx">User Manual</button>
                     </div>
                     <div class="doc-viewer" style="display: flex; flex-direction: column;">
-                        <div style="background: rgba(99, 102, 241, 0.1); color: var(--text-primary); padding: 10px 16px; font-size: 13.5px; text-align: center; border-bottom: 1px solid var(--border-color);">
-                            ⏳ <strong>Note:</strong> The document preview may take a few seconds to load from GitHub. If it stays blank, <a href="#" id="docRefreshBtn" style="color: var(--accent-blue); font-weight: 600; text-decoration: underline; margin-left: 4px;">click here to refresh</a>.
+                        <div
+                            style="background: rgba(99, 102, 241, 0.1); color: var(--text-primary); padding: 10px 16px; font-size: 13.5px; text-align: center; border-bottom: 1px solid var(--border-color);">
+                            ⏳ <strong>Note:</strong> The document preview may take a few seconds to load from GitHub. If
+                            it stays blank, <a href="#" id="docRefreshBtn"
+                                style="color: var(--accent-blue); font-weight: 600; text-decoration: underline; margin-left: 4px;">click
+                                here to refresh</a>.
                         </div>
                         <iframe id="docIframe" src="about:blank" frameborder="0" style="flex: 1; width: 100%;"></iframe>
                     </div>
@@ -555,58 +650,76 @@
                 </div>
             </div>
 
-            <div class="kpi-card" style="margin-top: 10px; padding: 30px; display: flex; flex-direction: column; gap: 15px; border-left: 4px solid var(--accent-blue);">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
+            <div class="kpi-card"
+                style="margin-top: 10px; padding: 30px; display: flex; flex-direction: column; gap: 15px; border-left: 4px solid var(--accent-blue);">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
                     <div style="display: flex; gap: 24px; align-items: center;">
-                        <img src="profile.jpg" alt="Harish Chavan" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-blue); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <img src="profile.jpg" alt="Harish Chavan"
+                            style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-blue); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                         <div>
-                            <h2 style="margin: 0; color: var(--text-primary); font-size: 26px; display: flex; align-items: baseline; gap: 8px;">
-                                Harish Chavan <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">(He/Him)</span>
+                            <h2
+                                style="margin: 0; color: var(--text-primary); font-size: 26px; display: flex; align-items: baseline; gap: 8px;">
+                                Harish Chavan <span
+                                    style="font-size: 14px; font-weight: normal; color: var(--text-muted);">(He/Him)</span>
                             </h2>
-                            <div style="color: var(--text-secondary); margin-top: 12px; font-size: 15px; max-width: 800px; line-height: 1.6; font-weight: 500;">
-                                Inspired by Hydrogen, Driven by Data | MBA Business Analytics | Power BI | Python | Data Management | Strategic Thinking
+                            <div
+                                style="color: var(--text-secondary); margin-top: 12px; font-size: 15px; max-width: 800px; line-height: 1.6; font-weight: 500;">
+                                Inspired by Hydrogen, Driven by Data | MBA Business Analytics | Power BI | Python | Data
+                                Management | Strategic Thinking
                             </div>
-                            <div style="display: flex; gap: 18px; margin-top: 16px; font-size: 13.5px; color: var(--text-muted);">
-                                <span>📍 Greater Nashik Area</span>
+                            <div
+                                style="display: flex; gap: 18px; margin-top: 16px; font-size: 13.5px; color: var(--text-muted);">
+                                <span>📍 Nashik, Maharashtra</span>
                                 <span>🎓 Sandip University</span>
                                 <span>🤝 500+ connections</span>
                             </div>
                         </div>
                     </div>
-                    <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); color: #22c55e; padding: 12px 20px; border-radius: 8px; text-align: right; min-width: 220px; margin-left: auto;">
-                        <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px; letter-spacing: 0.5px;">#OPENTOWORK</div>
-                        <div style="font-weight: 500; font-size: 12px; opacity: 0.9;">Business Analyst & Data Analyst</div>
+                    <div
+                        style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); color: #22c55e; padding: 12px 20px; border-radius: 8px; text-align: right; min-width: 220px; margin-left: auto; align-self: center;">
+                        <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px; letter-spacing: 0.5px;">
+                            #OPENTOWORK</div>
+                        <div style="font-weight: 500; font-size: 12px; opacity: 0.9;">Business Analyst & Data Analyst
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="creator-profile-container" style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 24px;">
                 <div class="kpi-card blue" style="flex: 1; min-width: 250px; text-align: center; padding: 30px;">
                     <div style="font-size: 40px; margin-bottom: 15px;">🌐</div>
                     <h3 style="margin-bottom: 10px; color: var(--text-primary);">Portfolio Website</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 13px;">View my complete portfolio of data projects and creations.</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 13px;">View my complete
+                        portfolio of data projects and creations.</p>
                     <a href="#" target="_blank" class="header-btn" style="display: inline-block;">Visit Portfolio</a>
                 </div>
-                
+
                 <div class="kpi-card teal" style="flex: 1; min-width: 250px; text-align: center; padding: 30px;">
                     <div style="font-size: 40px; margin-bottom: 15px;">💼</div>
                     <h3 style="margin-bottom: 10px; color: var(--text-primary);">LinkedIn</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 13px;">Connect with me professionally and follow my latest updates.</p>
-                    <a href="https://www.linkedin.com/in/harish-chavan-a4248738b" target="_blank" class="header-btn" style="display: inline-block;">Connect on LinkedIn</a>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 13px;">Connect with me
+                        professionally and follow my latest updates.</p>
+                    <a href="https://www.linkedin.com/in/harish-chavan-a4248738b" target="_blank" class="header-btn"
+                        style="display: inline-block;">Connect on LinkedIn</a>
                 </div>
-                
+
                 <div class="kpi-card purple" style="flex: 1; min-width: 250px; text-align: center; padding: 30px;">
                     <div style="font-size: 40px; margin-bottom: 15px;">🐙</div>
                     <h3 style="margin-bottom: 10px; color: var(--text-primary);">GitHub</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 13px;">Explore my open source code, repositories, and technical work.</p>
-                    <a href="https://github.com/Harry-0402" target="_blank" class="header-btn" style="display: inline-block;">Follow on GitHub</a>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 13px;">Explore my open
+                        source code, repositories, and technical work.</p>
+                    <a href="https://github.com/Harry-0402" target="_blank" class="header-btn"
+                        style="display: inline-block;">Follow on GitHub</a>
                 </div>
-                
+
                 <div class="kpi-card orange" style="flex: 1; min-width: 250px; text-align: center; padding: 30px;">
                     <div style="font-size: 40px; margin-bottom: 15px;">📧</div>
                     <h3 style="margin-bottom: 10px; color: var(--text-primary);">Email</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 13px;">Reach out for collaborations, questions, or opportunities.</p>
-                    <a href="mailto:harish@example.com" target="_blank" class="header-btn" style="display: inline-block;">Send an Email</a>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 13px;">Reach out for
+                        collaborations, questions, or opportunities.</p>
+                    <a href="mailto:harish@example.com" target="_blank" class="header-btn"
+                        style="display: inline-block;">Send an Email</a>
                 </div>
             </div>
         </section>
@@ -615,4 +728,5 @@
     <script src="data.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P105 — Product Cannibalization & Demand Shift Analysis</title>
+    <meta name="description" content="Interactive dashboard analyzing product cannibalization, demand shifts, and business KPIs">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">P105</div>
+            <div class="logo-sub">Product Cannibalization & Demand Shift Analysis</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link active" data-page="executive" id="nav-executive">
+                <span class="nav-icon">📊</span><span class="nav-text">Executive Overview</span></a></li>
+            <li><a href="#" class="nav-link" data-page="sales" id="nav-sales">
+                <span class="nav-icon">📈</span><span class="nav-text">Sales Performance</span></a></li>
+            <li><a href="#" class="nav-link" data-page="products" id="nav-products">
+                <span class="nav-icon">📦</span><span class="nav-text">Product Performance</span></a></li>
+            <li><a href="#" class="nav-link" data-page="cannibalization" id="nav-cannibalization">
+                <span class="nav-icon">🔄</span><span class="nav-text">Cannibalization</span></a></li>
+            <li><a href="#" class="nav-link" data-page="customers" id="nav-customers">
+                <span class="nav-icon">👥</span><span class="nav-text">Customer Insights</span></a></li>
+            <li><a href="#" class="nav-link" data-page="pricing" id="nav-pricing">
+                <span class="nav-icon">💰</span><span class="nav-text">Pricing Analysis</span></a></li>
+            <li><a href="#" class="nav-link" data-page="marketing" id="nav-marketing">
+                <span class="nav-icon">📣</span><span class="nav-text">Marketing Analysis</span></a></li>
+            <li><a href="#" class="nav-link" data-page="inventory" id="nav-inventory">
+                <span class="nav-icon">📋</span><span class="nav-text">Inventory Analysis</span></a></li>
+            <li><a href="#" class="nav-link" data-page="regional" id="nav-regional">
+                <span class="nav-icon">🗺️</span><span class="nav-text">Regional Analysis</span></a></li>
+            <li><a href="#" class="nav-link" data-page="recommendations" id="nav-recommendations">
+                <span class="nav-icon">💡</span><span class="nav-text">Recommendations</span></a></li>
+        </ul>
+
+        <!-- Slicer / Filters -->
+        <div class="slicer-section" id="slicerSection">
+            <div class="slicer-header" id="slicerToggle">
+                <span class="slicer-icon">🎛️</span>
+                <span class="slicer-title">Filters</span>
+                <span class="slicer-arrow" id="slicerArrow">▾</span>
+            </div>
+            <div class="slicer-body" id="slicerBody">
+
+                <div class="slicer-group">
+                    <label class="slicer-label" for="filter-date">Date Range</label>
+                    <select id="filter-date" class="slicer-select">
+                        <option value="All">All Time</option>
+                        <option value="2023">2023 Only</option>
+                        <option value="2024">2024 Only</option>
+                    </select>
+                </div>
+
+                <div class="slicer-group">
+                    <label class="slicer-label" for="filter-category">Category</label>
+                    <select id="filter-category" class="slicer-select">
+                        <option value="All">All Categories</option>
+                    </select>
+                </div>
+
+                <div class="slicer-group">
+                    <label class="slicer-label" for="filter-region">Region</label>
+                    <select id="filter-region" class="slicer-select">
+                        <option value="All">All Regions</option>
+                    </select>
+                </div>
+
+                <div class="slicer-group">
+                    <label class="slicer-label" for="filter-type">Product Type</label>
+                    <select id="filter-type" class="slicer-select">
+                        <option value="All">All Products</option>
+                        <option value="Launched">Launched Only</option>
+                        <option value="Existing">Existing Only</option>
+                    </select>
+                </div>
+
+                <div class="slicer-group">
+                    <label class="slicer-label" for="filter-group">Product Group</label>
+                    <select id="filter-group" class="slicer-select">
+                        <option value="All">All Groups</option>
+                    </select>
+                </div>
+
+                <div class="slicer-group">
+                    <label class="slicer-label" for="filter-product">Product</label>
+                    <select id="filter-product" class="slicer-select">
+                        <option value="All">All Products</option>
+                    </select>
+                </div>
+
+                <div class="slicer-group">
+                    <label class="slicer-label" for="filter-segment">Customer Segment</label>
+                    <select id="filter-segment" class="slicer-select">
+                        <option value="All">All Segments</option>
+                        <option value="High Value">High Value</option>
+                        <option value="Mid Value">Mid Value</option>
+                        <option value="Low Value">Low Value</option>
+                    </select>
+                </div>
+
+                <div class="slicer-group">
+                    <label class="slicer-label" for="filter-price">Price Range</label>
+                    <select id="filter-price" class="slicer-select">
+                        <option value="All">All Prices</option>
+                        <option value="Low">Low (&lt; ₹100)</option>
+                        <option value="Medium">Medium (₹100 - ₹200)</option>
+                        <option value="High">High (&gt; ₹200)</option>
+                    </select>
+                </div>
+
+                <button class="slicer-reset" id="slicerReset">↺ Reset All</button>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">☀️</span> <span class="theme-text">Light Mode</span>
+            </div>
+            <div class="author">By Harish Chavan • v1.0</div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+
+        <!-- ═══════════ PAGE 1: EXECUTIVE OVERVIEW ═══════════ -->
+        <section class="page active" id="page-executive">
+            <h1 class="page-title">Executive Overview</h1>
+            <p class="page-subtitle">Key performance metrics at a glance</p>
+
+            <div class="kpi-grid" id="kpi-grid">
+                <!-- KPI cards injected by JS -->
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card wide">
+                    <h3>Monthly Sales & Revenue Trend</h3>
+                    <canvas id="chart-exec-trend"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>Sales by Category</h3>
+                    <canvas id="chart-exec-category"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Sales by Region</h3>
+                    <canvas id="chart-exec-region"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PAGE 2: SALES PERFORMANCE ═══════════ -->
+        <section class="page" id="page-sales">
+            <h1 class="page-title">Sales Performance</h1>
+            <p class="page-subtitle">Monthly sales trends and before/after comparison</p>
+
+            <div class="chart-row">
+                <div class="chart-card wide">
+                    <h3>Monthly Sales Trend (with Launch Date)</h3>
+                    <canvas id="chart-sales-monthly"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>Sales by Category — Before vs After Launch</h3>
+                    <canvas id="chart-sales-cat-ba"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Sales by Region — Before vs After Launch</h3>
+                    <canvas id="chart-sales-reg-ba"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card wide">
+                    <h3>Sales by Product Group</h3>
+                    <canvas id="chart-sales-groups"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PAGE 3: PRODUCT PERFORMANCE ═══════════ -->
+        <section class="page" id="page-products">
+            <h1 class="page-title">Product Performance</h1>
+            <p class="page-subtitle">Rankings, growth analysis, and revenue contribution</p>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>Total Revenue by Product</h3>
+                    <canvas id="chart-prod-revenue"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Sales Growth % (After vs Before)</h3>
+                    <canvas id="chart-prod-growth"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card wide">
+                    <h3>Product Performance Table</h3>
+                    <div class="table-wrapper" id="product-table-wrapper">
+                        <!-- Table injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PAGE 4: CANNIBALIZATION ANALYSIS ═══════════ -->
+        <section class="page" id="page-cannibalization">
+            <h1 class="page-title">Cannibalization Analysis</h1>
+            <p class="page-subtitle">Demand shift, customer migration, and cannibalization metrics</p>
+
+            <div class="kpi-grid small" id="cann-kpis">
+                <!-- Injected by JS -->
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card wide">
+                    <h3>Demand Shift — P6 vs P4/P5 (Group G2)</h3>
+                    <canvas id="chart-cann-timeline"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>Customer Migration (P6 Customers)</h3>
+                    <canvas id="chart-cann-migration"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Product Sales Change — After Launch</h3>
+                    <canvas id="chart-cann-change"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PAGE 5: CUSTOMER INSIGHTS ═══════════ -->
+        <section class="page" id="page-customers">
+            <h1 class="page-title">Customer Insights</h1>
+            <p class="page-subtitle">Customer behavior, retention, and switching patterns</p>
+
+            <div class="kpi-grid small" id="cust-kpis"></div>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>Customers by Region</h3>
+                    <canvas id="chart-cust-region"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Customer Switching Breakdown</h3>
+                    <canvas id="chart-cust-switching"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PAGE 6: PRICING ANALYSIS ═══════════ -->
+        <section class="page" id="page-pricing">
+            <h1 class="page-title">Pricing Analysis</h1>
+            <p class="page-subtitle">Price distribution, price bands, and pricing impact</p>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>Average Price by Product</h3>
+                    <canvas id="chart-price-product"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Sales by Price Band</h3>
+                    <canvas id="chart-price-band"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card wide">
+                    <h3>Revenue by Price Band</h3>
+                    <canvas id="chart-price-revenue"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PAGE 7: MARKETING ANALYSIS ═══════════ -->
+        <section class="page" id="page-marketing">
+            <h1 class="page-title">Marketing Analysis</h1>
+            <p class="page-subtitle">Marketing ROI and efficiency across products</p>
+
+            <div class="chart-row">
+                <div class="chart-card wide">
+                    <h3>Marketing ROI by Product (Revenue per ₹1 Spend)</h3>
+                    <canvas id="chart-mkt-roi"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PAGE 8: INVENTORY ANALYSIS ═══════════ -->
+        <section class="page" id="page-inventory">
+            <h1 class="page-title">Inventory Analysis</h1>
+            <p class="page-subtitle">Stock availability trends and out-of-stock impact</p>
+
+            <div class="chart-row">
+                <div class="chart-card wide">
+                    <h3>Monthly Stock Availability %</h3>
+                    <canvas id="chart-inv-trend"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card wide">
+                    <h3>Out-of-Stock Records by Product</h3>
+                    <canvas id="chart-inv-oos"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PAGE 9: REGIONAL ANALYSIS ═══════════ -->
+        <section class="page" id="page-regional">
+            <h1 class="page-title">Regional Analysis</h1>
+            <p class="page-subtitle">Performance comparison across regions</p>
+
+            <div class="kpi-grid small" id="region-kpis"></div>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>Revenue by Region</h3>
+                    <canvas id="chart-reg-revenue"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Sales — Before vs After by Region</h3>
+                    <canvas id="chart-reg-ba"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PAGE 10: RECOMMENDATIONS ═══════════ -->
+        <section class="page" id="page-recommendations">
+            <h1 class="page-title">Business Recommendations</h1>
+            <p class="page-subtitle">Data-driven actionable insights for decision makers</p>
+
+            <div class="recommendations-grid" id="rec-grid">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

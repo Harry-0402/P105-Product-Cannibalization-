@@ -761,7 +761,7 @@ document.querySelectorAll('.header-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             docModal.classList.add('active');
-            if (!docIframe.src || docIframe.src === window.location.href) {
+            if (!docIframe.src || !docIframe.src.includes('docs.google.com')) {
                 docIframe.src = baseUrl + "BRD_Product_Cannibalization_Analysis.docx" + endUrl;
             }
         });

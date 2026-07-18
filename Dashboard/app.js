@@ -795,3 +795,13 @@ docBtns.forEach(btn => {
     });
 });
 
+// Refresh iframe manually
+const docRefreshBtn = document.getElementById('docRefreshBtn');
+if (docRefreshBtn) {
+    docRefreshBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const currentSrc = docIframe.src;
+        docIframe.src = '';
+        setTimeout(() => { docIframe.src = currentSrc; }, 100);
+    });
+}

@@ -780,12 +780,18 @@ window.addEventListener('click', (e) => {
 });
 
 // Document switcher
+const docDownloadBtn = document.getElementById('docDownloadBtn');
+const rawBaseUrl = "https://raw.githubusercontent.com/Harry-0402/P105-Product-Cannibalization-/main/";
+
 docBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         docBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const docName = btn.getAttribute('data-doc');
         docIframe.src = baseUrl + docName + endUrl;
+        if (docDownloadBtn) {
+            docDownloadBtn.href = rawBaseUrl + docName;
+        }
     });
 });
 

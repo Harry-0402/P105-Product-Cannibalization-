@@ -245,12 +245,10 @@ body {
 /* ── KPI Cards ────────────────────────────────────────────────────── */
 
 .kpi-grid {
-    display: flex;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     margin-bottom: 28px;
-    overflow-x: auto;
-    padding-bottom: 8px;
 }
 
 .kpi-grid::-webkit-scrollbar {
